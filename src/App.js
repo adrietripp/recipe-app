@@ -2,17 +2,17 @@ import React, { useState } from "react";
 import "./App.css";
 import RecipeCreate from "./RecipeCreate";
 import RecipeList from "./RecipeList";
-import RecipeData from "./RecipeData";
+import { recipeData } from "./RecipeData"; // If you're using starter data
 
 function App() {
-  const [recipes, setRecipes] = useState(RecipeData);
+  const [recipes, setRecipes] = useState(recipeData); // or []
 
   const addRecipe = (newRecipe) => {
     setRecipes([...recipes, newRecipe]);
   };
 
   const deleteRecipe = (indexToDelete) => {
-    setRecipes(recipes.filter((_, index) => index !== indexToDelete));
+    setRecipes((current) => current.filter((_, index) => index !== indexToDelete));
   };
 
   return (

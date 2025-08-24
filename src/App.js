@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./App.css";
 import RecipeCreate from "./RecipeCreate";
 import RecipeList from "./RecipeList";
-import { recipeData } from "./RecipeData"; // If you're using starter data
+import recipeData from "./RecipeData";
 
 function App() {
   const [recipes, setRecipes] = useState(recipeData); // or []

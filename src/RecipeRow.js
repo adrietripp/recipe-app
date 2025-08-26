@@ -10,17 +10,23 @@ function RecipeRow({ recipe, index, deleteRecipe }) {
           src={recipe.photo}
           alt={recipe.name}
           style={{
-            objectFit: "cover",   // Ensures the full image fits nicely
-            width: "100%",        // Fills the entire cell width
-            height: "100px",      // Keeps all images uniform
-            display: "block"      // Removes spacing below images
+            objectFit: "cover", // Ensures the image fills the box without distortion
+            width: "100px",     // Fixed width for consistency
+            height: "100px",    // Fixed height for consistency
+            display: "block",   // Ensures proper rendering
           }}
         />
       </td>
-      <td className="content_td"><p>{recipe.ingredients}</p></td>
-      <td className="content_td"><p>{recipe.preparation}</p></td>
+      <td className="content_td">
+        <p>{recipe.ingredients}</p>
+      </td>
+      <td className="content_td">
+        <p>{recipe.preparation}</p>
+      </td>
       <td>
-        <button name="delete" onClick={() => deleteRecipe(index)}>Delete</button>
+        <button name="delete" onClick={() => deleteRecipe(index)}>
+          Delete
+        </button>
       </td>
     </tr>
   );
